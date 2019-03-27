@@ -1,0 +1,557 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>QtGuiApplicationClass</class>
+ <widget class="QMainWindow" name="QtGuiApplicationClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1065</width>
+    <height>750</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>双目测量系统</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="gridLayout_4">
+    <item row="0" column="0" colspan="2">
+     <layout class="QGridLayout" name="gridLayout_3">
+      <item row="0" column="0">
+       <widget class="QGroupBox" name="groupBox">
+        <property name="title">
+         <string>左图</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout">
+         <item row="0" column="0">
+          <widget class="QLabel" name="label">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>左图</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QGroupBox" name="groupBox_2">
+        <property name="title">
+         <string>右图</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_2">
+         <item row="0" column="0">
+          <widget class="QLabel" name="label2">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>右图</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="1" column="0" rowspan="2">
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <widget class="QLabel" name="resultshow_2">
+        <property name="text">
+         <string>结果显示</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QTextBrowser" name="resultshow"/>
+      </item>
+     </layout>
+    </item>
+    <item row="1" column="1">
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QLabel" name="row">
+          <property name="text">
+           <string>标定板行数：</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSpinBox" name="rownum">
+          <property name="value">
+           <number>7</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="column">
+          <property name="text">
+           <string>标定板列数：</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSpinBox" name="columnnum">
+          <property name="value">
+           <number>7</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="spacing">
+          <property name="text">
+           <string>圆心距：</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSpinBox" name="space">
+          <property name="value">
+           <number>8</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="spacing_2">
+          <property name="text">
+           <string>mm</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QLabel" name="LImagesize">
+          <property name="text">
+           <string>左图大小：</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="lsize">
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="RImagesize">
+          <property name="text">
+           <string>右图大小：</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="rsize">
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+    <item row="2" column="1">
+     <layout class="QVBoxLayout" name="verticalLayout_3"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1065</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuwenjian">
+    <property name="title">
+     <string>文件</string>
+    </property>
+    <addaction name="open_camera"/>
+    <addaction name="close_camera"/>
+    <addaction name="save_camera"/>
+    <addaction name="separator"/>
+    <addaction name="open_left"/>
+    <addaction name="open_right"/>
+   </widget>
+   <widget class="QMenu" name="menuxiangjibiaoding">
+    <property name="title">
+     <string>相机标定</string>
+    </property>
+    <addaction name="circle"/>
+   </widget>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>测量</string>
+    </property>
+    <addaction name="diam"/>
+    <addaction name="rect"/>
+    <addaction name="drone"/>
+   </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>编辑</string>
+    </property>
+    <addaction name="LROI"/>
+    <addaction name="RROI"/>
+    <addaction name="separator"/>
+    <addaction name="recover"/>
+   </widget>
+   <addaction name="menuwenjian"/>
+   <addaction name="menu_2"/>
+   <addaction name="menuxiangjibiaoding"/>
+   <addaction name="menu"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="open_camera">
+   <property name="text">
+    <string>打开摄像头</string>
+   </property>
+   <property name="toolTip">
+    <string>打开摄像头</string>
+   </property>
+  </action>
+  <action name="close_camera">
+   <property name="text">
+    <string>关闭摄像头</string>
+   </property>
+   <property name="toolTip">
+    <string>关闭摄像头</string>
+   </property>
+  </action>
+  <action name="save_camera">
+   <property name="text">
+    <string>保存图像</string>
+   </property>
+   <property name="toolTip">
+    <string>保存图像</string>
+   </property>
+  </action>
+  <action name="open_left">
+   <property name="text">
+    <string>打开左图</string>
+   </property>
+   <property name="toolTip">
+    <string>打开左图</string>
+   </property>
+  </action>
+  <action name="open_right">
+   <property name="text">
+    <string>打开右图</string>
+   </property>
+   <property name="toolTip">
+    <string>打开右图</string>
+   </property>
+  </action>
+  <action name="circle">
+   <property name="text">
+    <string>圆形标定板</string>
+   </property>
+   <property name="toolTip">
+    <string>圆形标定板</string>
+   </property>
+  </action>
+  <action name="diam">
+   <property name="text">
+    <string>直径测量</string>
+   </property>
+   <property name="toolTip">
+    <string>圆形的直径测量</string>
+   </property>
+  </action>
+  <action name="rect">
+   <property name="text">
+    <string>宽度测量</string>
+   </property>
+   <property name="toolTip">
+    <string>矩形的边长测量</string>
+   </property>
+  </action>
+  <action name="drone">
+   <property name="text">
+    <string>靶标测量</string>
+   </property>
+   <property name="toolTip">
+    <string>靶标测量</string>
+   </property>
+  </action>
+  <action name="LROI">
+   <property name="text">
+    <string>左图ROI提取</string>
+   </property>
+   <property name="toolTip">
+    <string>左图感兴趣区域提取</string>
+   </property>
+  </action>
+  <action name="RROI">
+   <property name="text">
+    <string>右图ROI提取</string>
+   </property>
+   <property name="toolTip">
+    <string>右图感兴趣区域提取</string>
+   </property>
+  </action>
+  <action name="recover">
+   <property name="text">
+    <string>还原原图</string>
+   </property>
+   <property name="toolTip">
+    <string>还原原图</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="QtGuiApplication.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>open_camera</sender>
+   <signal>triggered()</signal>
+   <receiver>QtGuiApplicationClass</receiver>
+   <slot>openclicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>562</x>
+     <y>400</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>close_camera</sender>
+   <signal>triggered()</signal>
+   <receiver>QtGuiApplicationClass</receiver>
+   <slot>closeclicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>562</x>
+     <y>400</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>save_camera</sender>
+   <signal>triggered()</signal>
+   <receiver>QtGuiApplicationClass</receiver>
+   <slot>saveclicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>562</x>
+     <y>400</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>open_left</sender>
+   <signal>triggered()</signal>
+   <receiver>QtGuiApplicationClass</receiver>
+   <slot>leftclicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>562</x>
+     <y>400</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>open_right</sender>
+   <signal>triggered()</signal>
+   <receiver>QtGuiApplicationClass</receiver>
+   <slot>rightclicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>562</x>
+     <y>400</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>circle</sender>
+   <signal>triggered()</signal>
+   <receiver>QtGuiApplicationClass</receiver>
+   <slot>calibclicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>562</x>
+     <y>400</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>diam</sender>
+   <signal>triggered()</signal>
+   <receiver>QtGuiApplicationClass</receiver>
+   <slot>diamclicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>562</x>
+     <y>400</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rect</sender>
+   <signal>triggered()</signal>
+   <receiver>QtGuiApplicationClass</receiver>
+   <slot>rectclicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>562</x>
+     <y>400</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>resultshow</sender>
+   <signal>textChanged()</signal>
+   <receiver>QtGuiApplicationClass</receiver>
+   <slot>change()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>496</x>
+     <y>666</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>666</x>
+     <y>774</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>drone</sender>
+   <signal>triggered()</signal>
+   <receiver>QtGuiApplicationClass</receiver>
+   <slot>droneclicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>562</x>
+     <y>400</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>LROI</sender>
+   <signal>triggered()</signal>
+   <receiver>QtGuiApplicationClass</receiver>
+   <slot>LROIclicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>532</x>
+     <y>374</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>RROI</sender>
+   <signal>triggered()</signal>
+   <receiver>QtGuiApplicationClass</receiver>
+   <slot>RROIclicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>532</x>
+     <y>374</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>recover</sender>
+   <signal>triggered()</signal>
+   <receiver>QtGuiApplicationClass</receiver>
+   <slot>recoverclicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>532</x>
+     <y>374</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>openclicked()</slot>
+  <slot>closeclicked()</slot>
+  <slot>saveclicked()</slot>
+  <slot>calibclicked()</slot>
+  <slot>diamclicked()</slot>
+  <slot>leftclicked()</slot>
+  <slot>rightclicked()</slot>
+  <slot>rectclicked()</slot>
+  <slot>change()</slot>
+  <slot>droneclicked()</slot>
+  <slot>LROIclicked()</slot>
+  <slot>RROIclicked()</slot>
+  <slot>recoverclicked()</slot>
+ </slots>
+</ui>
